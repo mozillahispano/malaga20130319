@@ -1,28 +1,28 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-  <title>Firefox OS: La web es la plataforma</title>
+    <title>Firefox OS: La web es la plataforma</title>
 
-  <meta name="description" content="Firefos OS: La web es la plataforma">
-  <meta name="author" content="Fernando Rodríguez Sela">
+    <meta name="description" content="Firefos OS: La web es la plataforma">
+    <meta name="author" content="Fernando Rodríguez Sela">
 
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-  <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
 
-  <!-- For syntax highlighting -->
-  <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 
-  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-  <script>
-  document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-  </script>
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+    document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
 
     <!--[if lt IE 9]>
     <script src="reveal.js/lib/js/html5shiv.js"></script>
@@ -809,14 +809,12 @@ navigator.mozSetMessageHandler('telephony-new-call', function newCall() {
             </section>
           </section>
 
-
       </div>
     </div>
 
-<script src="reveal.js/lib/js/head.min.js"></script>
-<script src="reveal.js/js/reveal.min.js"></script>
-<script>
-
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+    <script>
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
@@ -833,18 +831,18 @@ navigator.mozSetMessageHandler('telephony-new-call', function newCall() {
 
         // Optional libraries used to extend on reveal.js
         dependencies: [
-       { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-       { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },//'
-       { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-       { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-       { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-       { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-        { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
-        { src: '/socket.io/socket.io.js', async: true },
-        { src: 'plugin/notes-server/client.js', async: true }
-          ]
-        });
-</script>
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },//'
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '/socket.io/socket.io.js', async: true },
+          { src: 'plugin/notes-server/client.js', async: true }
+        ]
+      });
+    </script>
 
-</body>
+  </body>
 </html>
