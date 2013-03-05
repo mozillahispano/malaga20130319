@@ -1,448 +1,456 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-		<title>Firefox OS: La web es la plataforma</title>
+  <title>Firefox OS: La web es la plataforma</title>
 
-		<meta name="description" content="Firefos OS: La web es la plataforma">
-		<meta name="author" content="Fernando Rodríguez Sela">
+  <meta name="description" content="Firefos OS: La web es la plataforma">
+  <meta name="author" content="Fernando Rodríguez Sela">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+  <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+  document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
 
-		<!--[if lt IE 9]>
-		<script src="reveal.js/lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>Firefox OS</h1>
-					<p>La web es la plataforma</p>
-					<p>
-						<small>
-							Fernando Rodríguez Sela<br />
-							OWD Backend Developer Leader - Telefonica Digital<br />
-							<a href="mailto:frsela@tid.es">frsela@tid.es</a>
-							<a href="https://twitter.com/mangiacaprini">@mangiacaprini</a>
-							<a href="https://github.com/frsela">github.com/frsela</a>
-						</small>
-						<small>
-							Guillermo López Leal<br />
-							Mozilla Hispano - Telefonica Digital<br />
-							<a href="mailto:gll@tid.es">gll@tid.es</a>
-							<a href="https://twitter.com/willyaranda">@willyaranda</a>
-							<a href="https://github.com/willyaranda">github.com/willyaranda</a>
-						</small>
-					</p>
-				</section>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Firefox OS</h1>
+          <p>La web es la plataforma</p>
+          <p>
+            <small>
+              Fernando Rodríguez Sela<br />
+              OWD Backend Developer Leader - Telefónica Digital<br />
+              <a href="mailto:frsela@tid.es">frsela@tid.es</a>
+              <a href="https://twitter.com/mangiacaprini">@mangiacaprini</a>
+              <a href="https://github.com/frsela">github.com/frsela</a>
+            </small>
+            <small>
+              Guillermo López Leal<br />
+              Mozilla Hispano - Telefónica Digital<br />
+              <a href="mailto:gll@tid.es">gll@tid.es</a>
+              <a href="https://twitter.com/willyaranda">@willyaranda</a>
+              <a href="https://github.com/willyaranda">github.com/willyaranda</a>
+            </small>
+          </p>
+        </section>
 
-				<!-- Introducción e historia -->
-				<section>
-					<section>
-						<h1>Introducción</h1>
-						<img src="res/Felipe.jpg" height="400px" />
-					</section>
-					<section>
-						<h1>Panoráma móvil</h1>
-						<p>Prácticamente podemos decir que es un duopolio</p>
-						<ul>
-							<li>Apple con iOS</li>
-							<li>Google con Android</li>
-						</ul>
-						<p></p>
-						<p>Estas dos compañías marcan las reglas del juego</p>
-						<p>¡ El resto sólo observamos !</p>
-						<small>Windows Phone, BB y demás se reparten una mínima parte del pastel</small>
-					</section>
-					<section>
-						<img src="res/mozilla_wordmark.png" style="background-color: white" height="100px" />
-						<br />
-						<ul>
-							<li>Hace una década liberó la web</li>
-							<ul>
-								<li>Web controlada por IE</li>
-								<li>Firefox devolvió el control al usuairo</li>
-							</ul>
-							<br />
-							<li>Hoy quiere liberar al mundo móvil</li>
-							<ul>
-								<li>Padres: Andreas Gal y Chris Jones</li>
-								<li>Nace el 25 de Julio de 2011</li>
-							</ul>
-						</ul>
-						<img src="res/bestie.jpg" />
-					</section>
-					<section>
-						<img src="res/telefonicadigital.jpeg" />
-					</section>
-					<section>
-						<p>Telefónica Digital (Actual I+D)</p>
-						<p>
-							El hacer un teléfono no es nada nuevo para Telefónica:
-							<a href="http://en.wikipedia.org/wiki/Vitelcom">Vitelcom</a>
-						</p>
-						<ul>
-							<li>Operadores están perdiendo el control</li>
-							<li>Mal uso de las redes generan mala QoS</li>
-							<li>Tener un terminal abierto favorecerá la innovación</li>
-							<br />
-							<li>¿Usar tecnologías web? ¡Si! varios intentos internos:</li>
-							<ul>
-								<li>Web Runtime (Nokia)</li>
-								<li>BONDI -> WAC</li>
-								<li>Bluephone (basado en greenphone)</li>
-								<li>SO basado en Webkit</li>
-							</ul>
-						</ul>
-					</section>
-					<section>
-						<h2>La unión hace la fuerza</h2>
-						<img src="res/Yoda1.jpg" height="500px" />
-					</section>
-				</section>
+        <!-- Introducción e historia -->
+        <section>
+          <section>
+            <h1>Introducción</h1>
+            <img src="res/Felipe.jpg" height="400px" />
+          </section>
+          <section>
+            <h1>Panorama móvil</h1>
+            <p>Prácticamente podemos decir que es un duopolio</p>
+            <ul>
+              <li>Apple con iOS</li>
+              <li>Google con Android</li>
+            </ul>
+            <p></p>
+            <p>Estas dos compañías marcan las reglas del juego</p>
+            <p>¡ El resto sólo observamos !</p>
+            <small>Windows Phone, BB y demás se reparten una mínima parte del pastel</small>
+          </section>
+          <section>
+            <img src="res/mozilla_wordmark.png" style="background-color: white" height="100px" />
+            <br />
+            <ul>
+              <li>Hace una década liberó la web:
+                <ul>
+                  <li>Web controlada por IE</li>
+                  <li>Firefox devolvió el control al usuairo</li>
+                </ul>
+              </li>
+            </ul>
+            <br>
+            <ul>
+              <li>Hoy quiere liberar al mundo móvil
+                <ul>
+                  <li>Padres: Andreas Gal y Chris Jones</li>
+                  <li>Nace el 25 de Julio de 2011</li>
+                </ul>
+              </li>
+            </ul>
+            <img src="res/bestie.jpg" />
+          </section>
+          <section>
+            <img src="res/telefonicadigital.jpeg" />
+          </section>
+          <section>
+            <p>Telefónica Digital (Actual I+D)</p>
+            <p>
+              El hacer un teléfono no es nada nuevo para Telefónica:
+              <a href="http://en.wikipedia.org/wiki/Vitelcom">Vitelcom</a>
+            </p>
+            <ul>
+              <li>Operadores están perdiendo el control</li>
+              <li>Mal uso de las redes generan mala QoS</li>
+              <li>Tener un terminal abierto favorecerá la innovación</li>
+              <br />
+              <li>¿Usar tecnologías web? ¡Si! varios intentos internos:</li>
+              <ul>
+                <li>Web Runtime (Nokia)</li>
+                <li>BONDI &rarr; WAC</li>
+                <li>Bluephone (basado en greenphone)</li>
+                <li>SO basado en Webkit</li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>La unión hace la fuerza</h2>
+            <img src="res/Yoda1.jpg" height="500px" />
+          </section>
+        </section>
 
-				<!-- Firefox OS (Arquitectura) -->
-				<section>
-					<section>
-						<h1>¿Qué es FirefoxOS?</h1>
-						<img src="res/firefox_logo-wordmark-horiz_RGB.png" style="background-color: white" />
-					</section>
-					<section>
-						<h2>Gaia</h2>
-						<a href="resource://r2d2b2g-at-mozilla-dot-org/r2d2b2g/data/content/index.html">
-							<img src="res/firefoxosscreenshot.png" width="100px" />
-						</a>
-						<ul>
-							<li>¿Una <a href="http://es.wikipedia.org/wiki/Gea">Diosa griega</a>?</li>
-							<li>También: la interfaz de usuario</li>
-							<li>100% HTML5, CSS3 y JS</li>
-							<li>Webapps</li>
-							<ul>
-								<li>System: Aplicación más importante</li>
-								<ul>
-									<li>Notification bar</li>
-									<li>Window management</li>
-									<li>System dialogs / Trusted UI / Popup dialogs</li>
-									<li>Install / update</li>
-									<li>Gestión de permisos</li>
-								</ul>
-								<li>Homescreen</li>
-								<li>Webapps</li>
-							</ul>
-						</ul>
-					</section>
-					<section>
-						<h2>Gecko</h2>
-						<ul>
-							<li>¿Un <a href="http://es.wikipedia.org/wiki/Gekkonidae">lagarto</a>?</li>
-							<li>No, también es el corazón del firefox, thunderbird y demás miembros de la familia mozilla</li>
-							<li>Se encarga de interpretar el HTML, CSS, JS</li>
-							<ul>
-								<li>Graphics stack, Layout engine y Virtual Machine</li>
-								<li>Network stack</li>
-							</ul>
-							<li>Principalmente desarrollado con C/C++ y JavaScript (XPCOM)</li>
-							<li>Portado a múltiples plataformas (HAL):</li>
-							<ul>
-								<li>Windows</li>
-								<li>Mac OS</li>
-								<li>Linux, Unix, ...</li>
-								<li>Android</li>
-								<li>Gonk ... ¿Gonk?</li>
-							</ul>
-						</ul>
-					</section>
-					<section>
-						<h2>Gonk</h2>
-						<ul>
-							<li>¿Un <a href="http://en.wikipedia.org/wiki/Gonk">juguete</a>?</li>
-							<li>
-								No, también es la capa más "baja" de Firefox OS
-								<small>Internamente y de cara a Gecko lo consideramos un Sistema Operativo más</small>
-							</li>
-							<li>Port del núcleo de Android</li>
-							<ul>
-								<li>Linux kernel</li>
-								<li>Módulos y drivers heredados de Android (RIL, Radio, ...)</li>
-								<li>Herramientas auxiliares (ADB, RILPROXY, ...)</li>
-							</ul>
-						</ul>
-					</section>
-					<section>
-						<h2>Arquitectura</h2>
-						<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform/Architecture">
-							<img src="res/FirefoxOS.png" height="500px" />
-						</a>
-					</section>
-					<section>
-						<h1>Procesos</h1>
-						<p>
-							<img src="res/650px-B2G-processes.png" />
-						</p>
-					</section>
-					<section>
-						<h1>Modelo de desarrollo</h1>
-						<ul>
-							<li>Opensource</li>
-							<li>Comunidad mozilla + Telefonica Digital</li>
-							<ul>
-								<li><a href="https://github.com/mozilla-b2g">https://github.com/mozilla-b2g</a></li>
-								<li><a href="https://github.com/mozilla-b2g/gaia/">https://github.com/mozilla-b2g/gaia/</a></li>
-								<li><a href="https://github.com/mozilla/mozilla-central">https://github.com/mozilla/mozilla-central</a></li>
-								<li><a href="http://hg.mozilla.org/">http://hg.mozilla.org/</a></li>
-								<li><a href="https://github.com/mozilla-b2g/Gaia-UI-Building-Blocks">https://github.com/mozilla-b2g/Gaia-UI-Building-Blocks</a></li>
-								<li><a href="https://github.com/telefonicaid/notification_server">https://github.com/telefonicaid/notification_server</a></li>
-							</ul>
-						</ul>
-					</section>
-				</section>
+        <!-- Firefox OS (Arquitectura) -->
+        <section>
+          <section>
+            <h1>¿Qué es FirefoxOS?</h1>
+            <img src="res/fxos-logo.png" style="background-color: white" />
+          </section>
+          <section>
+            <h2>Gaia</h2>
+            <ul>
+              <li>¿Una <a href="http://es.wikipedia.org/wiki/Gea">Diosa griega</a>?</li>
+              <li>También: la interfaz de usuario</li>
+              <li>100% HTML5, CSS3 y JS</li>
+              <li>Webapps</li>
+              <ul>
+                <li>System: Aplicación más importante</li>
+                <ul>
+                  <li>Notification bar</li>
+                  <li>Window management</li>
+                  <li>System dialogs / Trusted UI / Popup dialogs</li>
+                  <li>Install / update</li>
+                  <li>Permissions management</li>
+                </ul>
+                <li>Homescreen</li>
+                <li>Webapps</li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>Gaia</h2>
+            <img src="res/firefoxosscreenshot.png" height="500px">
+          </section>
+          <section>
+            <h2>Gecko</h2>
+            <ul>
+              <li>¿Un <a href="http://es.wikipedia.org/wiki/Gekkonidae">lagarto</a>?</li>
+              <li>No, también es el corazón del Firefox, Thunderbird y demás miembros de la familia mozilla</li>
+              <li>Se encarga de interpretar el HTML, CSS, JS</li>
+              <ul>
+                <li>Graphics stack, layout engine y virtual Machine</li>
+                <li>Network stack</li>
+              </ul>
+              <li>Principalmente desarrollado con C/C++ y JavaScript (XPCOM)</li>
+              <li>Portado a múltiples plataformas (HAL):</li>
+              <ul>
+                <li>Windows</li>
+                <li>Mac OS</li>
+                <li>Linux, Unix…</li>
+                <li>Android</li>
+                <li>Gonk … ¿Gonk?</li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>Gonk</h2>
+            <ul>
+              <li>¿Un <a href="http://en.wikipedia.org/wiki/Gonk">juguete</a>?</li>
+              <li>
+                No, también es la capa más "baja" de Firefox OS
+                <small>Internamente y de cara a Gecko lo consideramos un SO más</small>
+              </li>
+              <li>Port del núcleo de Android</li>
+              <ul>
+                <li>Linux kernel</li>
+                <li>Módulos y drivers heredados de Android (RIL, Radio…)</li>
+                <li>Herramientas auxiliares (adb, rilproxy…)</li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>Arquitectura</h2>
+            <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform/Architecture">
+              <img src="res/FirefoxOS.png" height="500px" />
+            </a>
+          </section>
+          <section>
+            <h1>Procesos</h1>
+            <p>
+              <img src="res/650px-B2G-processes.png" />
+            </p>
+          </section>
+          <section>
+            <h1>Modelo de desarrollo</h1>
+            <ul>
+              <li>Software libre</li>
+              <li>Comunidad Mozilla + Telefonica Digital</li>
+              <ul>
+                <li><a href="https://github.com/mozilla-b2g">https://github.com/mozilla-b2g</a></li>
+                <li><a href="https://github.com/mozilla-b2g/gaia/">https://github.com/mozilla-b2g/gaia/</a></li>
+                <li><a href="https://github.com/mozilla/mozilla-central">https://github.com/mozilla/mozilla-central</a></li>
+                <li><a href="http://hg.mozilla.org/">http://hg.mozilla.org/</a></li>
+                <li><a href="https://github.com/mozilla-b2g/Gaia-UI-Building-Blocks">https://github.com/mozilla-b2g/Gaia-UI-Building-Blocks</a></li>
+                <li><a href="https://github.com/telefonicaid/notification_server">https://github.com/telefonicaid/notification_server</a></li>
+              </ul>
+            </ul>
+          </section>
+        </section>
 
-				<!-- Webapps -->
-				<section>
-					<section>
-						<h1>WebApps</h1>
-						<p>Con tecnologías web hacemos páginas web</p>
-						<p>Entonces, ¿a qué nos referimos?</p>
-						<p><br />Para hacer aplicaciones necesitamos:</p>
-						<ul>
-							<li>Capacidad de funcionamiento offline</li>
-							<li>Almacenamiento local</li>
-							<li>Conectividad</li>
-							<li>Acceso al sistema de ficheros</li>
-							<li>Multimedia</li>
-						</ul>
-						<p><br />¿Los estándares web lo soportan?</p>
-					</section>
-					<section>
-						<img src="res/superhero_shirt_2.jpg" />
-						<a href="http://www.html5rocks.com/en/">html5rocks.com</a>
-					</section>
-					<section>
-						<h2>HTML5 / CSS3 / JavaScript</h2>
-						<ul>
-							<li><a href="http://www.html5rocks.com/en/features/offline">
-								Capacidad de funcionamiento offline
-							</a>: application cache, localStorage, webSQL, ...</li>
-							<li><a href="http://www.html5rocks.com/en/features/storage">
-								Almacenamiento local
-							</a>: indexedDB, Web Storage, ...</li>
-							<li><a href="http://www.html5rocks.com/en/features/connectivity">
-								Conectividad
-							</a>: WebSockets, Server-Sent events</li>
-							<li><a href="http://www.html5rocks.com/en/features/file_access">
-								Acceso al sistema de ficheros
-							</a>: XMLHttpRequest2</li>
-							<li><a href="http://www.html5rocks.com/en/features/multimedia">
-								Multimedia
-							</a>: audio y video tags, 3D Canvas, animaciones CSS, ...</li>
-						</ul>
-					</section>
-					<section>
-						<h1>Pero aún nos falta ...</h1>
-						<ul>
-							<li>Control de energía</li>
-							<li>Vibrador</li>
-							<li>Envío de mensajes cortos</li>
-							<li>Telefonía</li>
-							<li>...</li>
-						</ul>
-						<p><br />No todo podemos implementarlo con la web, necesitamos acceder a recursos del sistema</p>
-					</section>
-				</section>
+        <!-- Webapps -->
+        <section>
+          <section>
+            <h1>WebApps</h1>
+            <p>Con tecnologías web hacemos páginas web</p>
+            <p>Entonces, ¿a qué nos referimos?</p>
+            <p><br />Para hacer aplicaciones necesitamos:</p>
+            <ul>
+              <li>Capacidad de funcionamiento offline</li>
+              <li>Almacenamiento local</li>
+              <li>Conectividad</li>
+              <li>Acceso al sistema de ficheros</li>
+              <li>Multimedia</li>
+            </ul>
+            <p><br />¿Los estándares web lo soportan?</p>
+          </section>
+          <section>
+            <img src="res/superhero_shirt_2.jpg" />
+            <a href="http://www.html5rocks.com/en/">html5rocks.com</a>
+          </section>
+          <section>
+            <h2>HTML5 / CSS3 / JavaScript</h2>
+            <ul>
+              <li><a href="http://www.html5rocks.com/en/features/offline">
+                Capacidad de funcionamiento offline
+              </a>: application cache, localStorage, webSQL…</li>
+              <li><a href="http://www.html5rocks.com/en/features/storage">
+                Almacenamiento local
+              </a>: indexedDB, Web Storage…</li>
+              <li><a href="http://www.html5rocks.com/en/features/connectivity">
+                Conectividad
+              </a>: WebSockets, Server-Sent events</li>
+              <li><a href="http://www.html5rocks.com/en/features/file_access">
+                Acceso al sistema de ficheros
+              </a>: XMLHttpRequest2</li>
+              <li><a href="http://www.html5rocks.com/en/features/multimedia">
+                Multimedia
+              </a>: audio y video tags, 3D Canvas, animaciones CSS…</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Pero aún nos falta …</h1>
+            <ul>
+              <li>Control de energía</li>
+              <li>Vibrador</li>
+              <li>Envío de mensajes cortos</li>
+              <li>Telefonía</li>
+              <li>…</li>
+            </ul>
+            <p><br />No todo podemos implementarlo con la web, necesitamos acceder a recursos del sistema</p>
+          </section>
+        </section>
 
-				<!-- WebAPIs -->
-				<section>
-					<section>
-						<h1>WebAPIs</h1>
-						<img src="res/woody_html5.jpg" height="400px" />
-						<p>Necesitamos exponer funcionalidades nativas a la web</p>
-					</section>
-					<section>
-						<h1>WebTelephony</h1>
-						<p>Funciones de telefonía. Imprescindible para realizar y recibir llamadas</p>
-						<a href="http://sysapps.github.com/sysapps/proposals/Telephony/Telephony.html">http://sysapps.github.com/sysapps/proposals/Telephony/Telephony.html</a>
-						<code class="javascript" contenteditable="" ><pre>
+        <!-- WebAPIs -->
+        <section>
+          <section>
+            <h1>WebAPIs</h1>
+            <img src="res/woody_html5.jpg" height="400px" />
+            <p>Necesitamos exponer funcionalidades nativas a la web</p>
+          </section>
+          <section>
+            <h1>WebTelephony</h1>
+            <p>Funciones de telefonía. Imprescindible para realizar y recibir llamadas</p>
+            <a href="http://sysapps.github.com/sysapps/proposals/Telephony/Telephony.html">http://sysapps.github.com/sysapps/proposals/Telephony/Telephony.html</a>
+            <pre>
+              <code class="javascript" contenteditable="" >
 var call = navigator.mozTelephony.dial(‘+34983367743’); // Launch a call
-call.addEventListener('statechange', function(e) { // Listening 
-    if(e.target.state === ‘alerting’) window.console.log(‘Ringing the other party!’);
-    if(e.target.state === ‘connected’) { // Do something. The other party answered } 
-    });
-						</pre></code>
-					</section>
-					<section>
-						<h1>WebSMS / MMS</h1>
-						<p>Funciones de mensajería</p>
-						<a href="http://sysapps.github.com/sysapps/proposals/Messaging/Messaging.html">http://sysapps.github.com/sysapps/proposals/Messaging/Messaging.html</a>
-						<code class="javascript" contenteditable="" ><pre>
+call.addEventListener('statechange', function(e) { // Listening
+  if(e.target.state === ‘alerting’) window.console.log(‘Ringing the other party!’);
+  if(e.target.state === ‘connected’) { // Do something. The other party answered }
+});
+            </code></pre>
+          </section>
+          <section>
+            <h1>WebSMS / MMS</h1>
+            <p>Funciones de mensajería</p>
+            <a href="http://sysapps.github.com/sysapps/proposals/Messaging/Messaging.html">http://sysapps.github.com/sysapps/proposals/Messaging/Messaging.html</a>
+            <pre>
+              <code class="javascript" contenteditable="" >
 var req = navigator.mozSms.send(‘+34638883076’,’Hi, coffee?’);  // Send
 req.onsuccess = function() { window.console.log(‘Sent!!’) };
 
 navigator.mozSms.addEventListener(‘received’,receivedCB); // Listen to new
-						</pre></code>
-					</section>
-					<section>
-						<h1>Contacts</h1>
-						<p>Gestión de la agenda de contactos (crear, leer, actualizar, borrar y buscar)</p>
-						<a href="http://sysapps.github.com/sysapps/proposals/Contacts/Contacts.html">http://sysapps.github.com/sysapps/proposals/Contacts/Contacts.html</a>
-						<code class="javascript" contenteditable="" ><pre>
+            </code></pre>
+          </section>
+          <section>
+            <h1>Contacts</h1>
+            <p>Gestión de la agenda de contactos (crear, leer, actualizar, borrar y buscar)</p>
+            <a href="http://sysapps.github.com/sysapps/proposals/Contacts/Contacts.html">http://sysapps.github.com/sysapps/proposals/Contacts/Contacts.html</a>
+            <pre><code class="javascript" contenteditable="" >
 var options = {
-	filterBy: ['tel'],
-	filterOp: 'contains',
-	filterValue: ‘983367743’
+  filterBy: ['tel'],
+  filterOp: 'contains',
+  filterValue: ‘983367743’
 };
 var request = navigator.mozContacts.find(options);
 request.onsuccess = function (e) {
-      if (e.target.result.length == 0) 
-     else { contactName = e.target.result[0].name  }
+  if (e.target.result.length == 0)
+  else { contactName = e.target.result[0].name }
 }
-						</pre></code>
-					</section>
-					<section>
-						<h1>Settings</h1>
-						<p>Leer y modificar propiedades del sistema</p>
-						<a href="https://wiki.mozilla.org/WebAPI/SettingsAPI#Proposed_API">https://wiki.mozilla.org/WebAPI/SettingsAPI#Proposed_API</a>
-						<code class="javascript" contenteditable="" ><pre>
+          </code></pre>
+          </section>
+          <section>
+            <h1>Settings</h1>
+            <p>Leer y modificar propiedades del sistema</p>
+            <a href="https://wiki.mozilla.org/WebAPI/SettingsAPI#Proposed_API">https://wiki.mozilla.org/WebAPI/SettingsAPI#Proposed_API</a>
+            <pre><code class="javascript" contenteditable="" >
 var request = navigator.mozSettings.getLock().get('language.current');
 request.onsuccess = function(e) {
-      selectedLocale = e.target.result['language.current’];
+  selectedLocale = e.target.result['language.current’];
 }
-						</pre></code>
-					</section>
-					<section>
-						<h1>Mobile Network Connection</h1>
-						<p>Interfaz con la RIL</p>
-						<a href="https://wiki.mozilla.org/WebAPI/WebMobileConnection">https://wiki.mozilla.org/WebAPI/WebMobileConnection</a>
-						<code class="javascript" contenteditable="" ><pre>
-navigator.mozMobileConnection.cardState;                 // SIM card state
-navigator.mozMobileConnection.voice;                     // Voice connection state
-navigator.mozMobileConnection.data;                      // Data Connection state
-						</pre></code>
-					</section>
-					<section>
-						<h1>Device Media Storage</h1>
-						<p>Recuperar y almacenar contenido multimedia</p>
-						<a href="https://wiki.mozilla.org/WebAPI/DeviceStorageAPI">https://wiki.mozilla.org/WebAPI/DeviceStorageAPI</a>
-						<code class="javascript" contenteditable="" ><pre>
-var store = navigator.getDeviceStorage(‘pictures’);       // Picture store
-store.addNamed(blob,’myPicture’);                         // Add a new element
-store.enumerate()                                         // Iterate over the store
-						</pre></code>
-					</section>
-					<section>
-						<h1>Camera</h1>
-						<p>Operaciones para trabajar con la cámara de fotos</p>
-						<p>Sin spec. En futuro: Alinar con WebRTC</p>
-						<code class="javascript" contenteditable="" ><pre>
-navigator.mozCameras.getCamera(options, function gotCamera())
+            </code></pre>
+          </section>
+          <section>
+            <h1>Mobile Network Connection</h1>
+            <p>Interfaz con la RIL</p>
+            <a href="https://wiki.mozilla.org/WebAPI/WebMobileConnection">https://wiki.mozilla.org/WebAPI/WebMobileConnection</a>
+            <pre><code class="javascript" contenteditable="" >
+    navigator.mozMobileConnection.cardState; // SIM card state
+    navigator.mozMobileConnection.voice;     // Voice connection state
+    navigator.mozMobileConnection.data;      // Data Connection state
+            </code></pre>
+          </section>
+          <section>
+            <h1>Device Media Storage</h1>
+            <p>Recuperar y almacenar contenido multimedia</p>
+            <a href="https://wiki.mozilla.org/WebAPI/DeviceStorageAPI">https://wiki.mozilla.org/WebAPI/DeviceStorageAPI</a>
+            <pre><code class="javascript" contenteditable="" >
+var store = navigator.getDeviceStorage(‘pictures’);  // Picture store
+store.addNamed(blob,’myPicture’);                    // Add a new element
+store.enumerate();                                   // Iterate over the store (cursor)
+            </code></pre>
+          </section>
+          <section>
+            <h1>Camera</h1>
+            <p>Operaciones para trabajar con la cámara de fotos</p>
+            <p>Sin spec. En futuro: Alinear con WebRTC</p>
+            <pre><code class="javascript" contenteditable="" >
+navigator.mozCameras.getCamera(options, function gotCamera());
 camera.getPreviewStream(function gotPreview(stream) {
   preview.mozSrcObject = stream
-})
-camera.getPreviewStreamVideoMode /* For video */
-camera.capabilities /* Hardware capabilities */
-						</pre></code>
-					</section>
-					<section>
-						<h1>Battery Status</h1>
-						<p>Monitorizar batería</p>
-						<a href="http://www.w3.org/TR/battery-status/">http://www.w3.org/TR/battery-status/</a>
-						<code class="javascript" contenteditable="" ><pre>
+});
+camera.getPreviewStreamVideoMode; // For video
+camera.capabilities;              // Hardware capabilities
+            </code></pre>
+          </section>
+          <section>
+            <h1>Battery Status</h1>
+            <p>Monitorizar batería</p>
+            <a href="http://www.w3.org/TR/battery-status/">http://www.w3.org/TR/battery-status/</a>
+            <pre><code class="javascript" contenteditable="" >
 navigator.battery.onlevelchange = function () {
   console.log(‘New battery level: ‘ + navigator.battery.level);
 };
-						</pre></code>
-					</section>
-					<section>
-						<h1>Vibration</h1>
-						<p>Actuar sobre el vibrador del terminal</p>
-						<a href="http://www.w3.org/TR/vibration/">http://www.w3.org/TR/vibration/</a>
-						<code class="javascript" contenteditable="" ><pre>
+            </code></pre>
+          </section>
+          <section>
+            <h1>Vibration</h1>
+            <p>Actuar sobre el vibrador del terminal</p>
+            <a href="http://www.w3.org/TR/vibration/">http://www.w3.org/TR/vibration/</a>
+            <pre><code class="javascript" contenteditable="" >
 navigator.mozVibrate(1000); // Vibrate a second
 navigator.mozVibrate(); // cancel the current vibration
-						</pre></code>
-					</section>
-					<section>
-						<h1>Screen Lock</h1>
-						<p>Detectar giros del terminal y bloquear orientación</p>
-						<a href="http://www.w3.org/TR/screen-orientation/">http://www.w3.org/TR/screen-orientation/</a>
-						<code class="javascript" contenteditable="" ><pre>
+            </code></pre>
+          </section>
+          <section>
+            <h1>Screen Lock</h1>
+            <p>Detectar giros del terminal y bloquear orientación</p>
+            <a href="http://www.w3.org/TR/screen-orientation/">http://www.w3.org/TR/screen-orientation/</a>
+            <pre><code class="javascript" contenteditable="" >
 screen.addEventListener(‘orientationchange’,function() {
-   window.console.log(‘New Orientation: ‘,screen.orientation);
+  window.console.log(‘New Orientation: ‘,screen.orientation);
 });
 screen.lock(‘landscape’);
-						</pre></code>
-					</section>
-					<section>
-						<h1>Power Management</h1>
-						<p>Gestión de energía</p>
-						<a href="https://wiki.mozilla.org/WebAPI/PowerManagementAPI">https://wiki.mozilla.org/WebAPI/PowerManagementAPI</a>
-						<code class="javascript" contenteditable="" ><pre>
+            </code></pre>
+          </section>
+          <section>
+            <h1>Power Management</h1>
+            <p>Gestión de energía</p>
+            <a href="https://wiki.mozilla.org/WebAPI/PowerManagementAPI">https://wiki.mozilla.org/WebAPI/PowerManagementAPI</a>
+            <pre><code class="javascript" contenteditable="" >
 navigator.mozPower.reboot();
 navigator.mozPower.powerOff();
 navigator.mozPower.screenBrightness = 0.5;
 navigator.mozPower.screenEnabled = false;
-						</pre></code>
-					</section>
-					<section>
-						<h1>Resource Lock</h1>
-						<p>Bloquear recursos, por ejemplo que se apague la pantalla si estamos reproduciendo un video</p>
-						<a href="http://www.w3.org/TR/PowerManagementAPI/">http://www.w3.org/TR/PowerManagementAPI/</a>
-						<code class="javascript" contenteditable="" ><pre>
+            </code></pre>
+          </section>
+          <section>
+            <h1>Resource Lock</h1>
+            <p>Bloquear recursos, por ejemplo que se apague la pantalla si estamos reproduciendo un video</p>
+            <a href="http://www.w3.org/TR/PowerManagementAPI/">http://www.w3.org/TR/PowerManagementAPI/</a>
+            <pre><code class="javascript" contenteditable="" >
 var lock = navigator.requestWakeLock(‘screen’);
 lock.unlock();
-						</pre></code>
-					</section>
-					<section>
-						<h1>Notifications</h1>
-						<p>Publicación de notificaciones (barra superior)</p>
-						<a href="http://www.w3.org/TR/notifications/">http://www.w3.org/TR/notifications/</a>
-						<code class="javascript" contenteditable="" ><pre>
-var notif = navigator.mozNotification.createNotification (
-	"Meeting about to begin", "Room 101”, ‘icon.png’ );
-notif.onclick = function() { // Do something };
-notif.show();
-						</pre></code>
-					</section>
-					<section>
-						<h1>Keyboard IME</h1>
-						<p>Teclado virtual</p>
-						<a href="https://wiki.mozilla.org/WebAPI/KeboardIME">https://wiki.mozilla.org/WebAPI/KeboardIME</a>
-						<code class="javascript" contenteditable="" ><pre>
+            </code></pre>
+          </section>
+          <section>
+            <h1>Notifications</h1>
+            <p>Publicación de notificaciones (barra superior)</p>
+            <a href="http://www.w3.org/TR/notifications/">http://www.w3.org/TR/notifications/</a>
+            <pre><code class="javascript" contenteditable="" >
+      var notif = navigator.mozNotification.createNotification (
+      "Meeting about to begin", "Room 101”, ‘icon.png’ );
+      notif.onclick = function() { // Do something };
+      notif.show();
+            </code></pre>
+          </section>
+          <section>
+            <h1>Keyboard IME</h1>
+            <p>Teclado virtual</p>
+            <a href="https://wiki.mozilla.org/WebAPI/KeboardIME">https://wiki.mozilla.org/WebAPI/KeboardIME</a>
+            <pre><code class="javascript" contenteditable="" >
 navigator.mozKeyboard.sendKey(keyCode, charCode); // Send key to UI comp.
 navigator.mozKeyboard.onfocuschange
-						</pre></code>
-					</section>
-					<section>
-						<h1>Push Notifications</h1>
-						<p>Notificaciones asíncronas. Varias propuestas:</p>
-						<a href="https://wiki.mozilla.org/WebAPI/SimplePush">https://wiki.mozilla.org/WebAPI/SimplePush</a>
-						<a href="http://www.w3.org/TR/push-api/">http://www.w3.org/TR/push-api/</a>
-						<a href="http://frsela.github.com/notification_server_doc/">http://frsela.github.com/notification_server_doc/</a>
-						<code class="javascript" contenteditable="" ><pre>
+            </code></pre>
+          </section>
+          <section>
+            <h1>Push Notifications</h1>
+            <p>Notificaciones asíncronas. Varias propuestas:</p>
+            <a href="https://wiki.mozilla.org/WebAPI/SimplePush">https://wiki.mozilla.org/WebAPI/SimplePush</a>
+            <a href="http://www.w3.org/TR/push-api/">http://www.w3.org/TR/push-api/</a>
+            <a href="http://frsela.github.com/notification_server_doc/">http://frsela.github.com/notification_server_doc/</a>
+            <pre><code class="javascript" contenteditable="" >
 // Manifest
 {"messages": [
-    {"push": "/view_to_launch.html"}
-  ]}
-... 
+  {"push": "/view_to_launch.html"}
+]}
+            </code></pre>
+            <pre><code class="javascript" contenteditable="" >
 var req = navigator.pushNotification.register();
 req.onsuccess = function(e) {
-   endpoint = e.target.result.pushEndpoint;	// sends the to the server
+  endpoint = e.target.result.pushEndpoint;  // sends the to the server
 }
 navigator.mozSetMessageHandler('push', {
   handleMessage: function(e) {
@@ -450,56 +458,152 @@ navigator.mozSetMessageHandler('push', {
       getNewMessagesFromAppServer(e.target.version);
   }
 });
-						</pre></code>
-					</section>
-				</section>
+            </code></pre>
+          </section>
+        </section>
 
-				<!-- Marketplace -->
-				<section>
-					<section>
-						<h1>Marketplace</h1>
-						<img src="res/firefox-marketplace_logo-only_RGB.png" height="500px" />
-					</section>
-					<section>
-						<img src="res/marketplace.png" />
-						<br />
-						<a href="https://marketplace.firefox.com/">marketplace.firefox.com</a>
-					</section>
-				</section>
+        <!-- Marketplace -->
+        <section>
+          <section>
+            <h1>Marketplace</h1>
+            <img src="res/firefox-marketplace_logo-only_RGB.png" height="500px" />
+          </section>
+          <section>
+            <img src="res/marketplace.png" />
+            <br />
+            <a href="https://marketplace.firefox.com/">marketplace.firefox.com</a>
+          </section>
+        </section>
 
-				<!-- Ev.me -->
-				<section>
-					<h1>Everything.me</h1>
-					<img src="res/ev_me.png" width="200px" />
-					<ul>
-						<li>Potente motor de búsqueda integrado</li>
-						<li>
-							Los resultados se pueden dejar como webapps en el teléfono
-							<small>se instalan como "untrusted non-cached hosted web pages"</small> 
-						</li>
-					</ul>
-				</section>
+        <!-- Ev.me -->
+        <section>
+          <h1>Everything.me</h1>
+          <p>dynamic app search</p>
+          <img src="res/ev_me.png" width="200px" />
+          <ul>
+            <li>Potente motor de búsqueda integrado</li>
+            <li>
+             Los resultados se pueden dejar como webapps en el teléfono
+             <small>se instalan como "untrusted non-cached hosted web pages"</small>
+            </li>
+          </ul>
+        </section>
 
 
-				<!-- Cómo es una webapp -->
-				<section>
-					<section>
-						<h1>¿Cómo es una webapp?</h1>
-						<img src="res/EstructuraWebApp.png" />
-					</section>
-					<section>
-						<h1>manifest</h1>
-						<code class="javascript" contenteditable="" ><pre>
-{
-  "name": "Browser",
-  "description": "Gaia Web Browser",
-  "launch_path": "/index.html",
-  "type": "certified",
-  "developer": {
-    "name": "The Gaia Team",
-    "url": "https://github.com/mozilla-b2g/gaia"
-  },
-  "permissions": {
+        <!-- Parte de Guillermo, how to do a webapp -->
+        <!-- Introducción -->
+        <section>
+          <section>
+            <h2>Presentación</h2>
+            <img src="res/willy.png">
+            <p>Guillermo López, @willyaranda, willyaranda@mozilla-hispano.org</p>
+          </section>
+
+          <section>
+            <h2>Mozilla Hispano</h2>
+            <img src="res/mh-logo.png" alt="Mozilla Hispano logo" height="400">
+          </section>
+
+
+          <section>
+            <h1>(paréntesis personal)</h1>
+            <small>o historias del abuelo cebolleta</small>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>THE WEB IS THE PLATFORM</h1>
+          </section>
+
+          <section>
+            <img src="res/campo.png" alt="">
+          </section>
+
+          <section>
+            <img src="res/netscape.png" alt="">
+          </section>
+
+          <section>
+            <p>El diablo…</p>
+            <small>… o el revolucionario de la web</small>
+          </section>
+
+          <section>
+            <img src="res/ie6.png" alt="">
+          </section>
+
+          <section>
+            <img src="res/first-war.png" alt="">
+          </section>
+
+          <section>
+            <img src="res/firefox_logo-wordmark-horiz_RGB.png" alt="" style="background-color: white">
+          </section>
+
+          <section>
+            <h2>Los años pasaron…</h2>
+          </section>
+
+          <section>
+            <h2>Segunda guerra</h2>
+            <img src="res/chrome.png" alt="" height="150">
+            <img src="res/opera.png" alt="" height="150">
+            <img src="res/safari.png" alt="" height="150">
+          </section>
+
+          <section>
+            <h2>Going mobile</h2>
+            <img src="res/going-mobile.png" alt="">
+          </section>
+
+          <section>
+            <h2>Ecosistemas cerrados</h2>
+            <img src="res/silo.png" alt="">
+          </section>
+
+          <section>
+            <h1>Mobile web is webkit-centric</h1>
+            <p>Y no queremos (ni debemos) repetir el mismo problema que con IE6</p>
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <img src="res/superhero_shirt_2.jpg" alt="">
+            <p>TO THE RESCUE!!!</p>
+          </section>
+          <section>
+            <img src="res/html5-and-friends.png" alt="">
+          </section>
+          <section>
+            <img src="res/browser-limited.png" alt="">
+          </section>
+          <section>
+            <img src="res/hackea.png" alt="">
+          </section>
+        </section>
+
+        <!-- Cómo es una webapp -->
+        <section>
+          <section>
+            <h1>¿Cómo es una webapp?</h1>
+            <img src="res/EstructuraWebApp.png" />
+          </section>
+        <section>
+          <h1>manifest</h1>
+          <pre><code class="javascript" contenteditable="" >
+    {
+      "name": "Browser",
+      "description": "Gaia Web Browser",
+      "launch_path": "/index.html",
+      "type": "certified",
+      "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
     "browser":{},
     "systemXHR":{},
     "settings":{ "access": "readonly" },
@@ -507,22 +611,14 @@ navigator.mozSetMessageHandler('push', {
     "desktop-notification" : {}
   },
   "locales": {
-    "ar": {
-      "name": "المتصفح",
-      "description": "Gaia متصفح الويب"
-    },
-    "en-US": {
-      "name": "Browser",
-      "description": "Gaia Web Browser"
-    },
-    "fr": {
-      "name": "Navigateur",
-      "description": "Navigateur Web Gaia"
-    },
-    "zh-TW": {
-      "name": "網路瀏覽器",
-      "description": "Gaia 網路瀏覽器"
-    }
+  "en-US": {
+  "name": "Browser",
+  "description": "Gaia Web Browser"
+  },
+  "fr": {
+  "name": "Navigateur",
+  "description": "Navigateur Web Gaia"
+  }
   },
   "default_locale": "en-US",
   "icons": {
@@ -534,119 +630,221 @@ navigator.mozSetMessageHandler('push', {
       "filters": {
         "type": "url",
         "url": { "required":true, "regexp":"/^https?:/" }
+        }
       }
     }
   }
-}
-						</pre></code>
-					</section>
-					<section>
-						<h1>Web Activities</h1>
-						<code class="javascript" contenteditable="" ><pre>
-//manifest
+          </code></pre>
+        </section>
+        <section>
+          <h1>Web Activities</h1>
+          <pre><code class="javascript" contenteditable="" >
 "activities": {
-    "pick": {
-      "filters": {
-        "type": ["image/jpeg", "image/png"]
-       },
-      "disposition": "inline",
-      "returnValue": true,
-      "href": "/index.html#pick"
-    }
-
+  "pick": {
+    "filters": {
+    "type": ["image/jpeg", "image/png"]
+  },
+  "disposition": "inline",
+  "returnValue": true,
+  "href": "/index.html#pick"
+}
+          </code></pre>
+          <pre><code class="javascript" contenteditable="" >
 //code
 navigator.mozSetMessageHandler(‘activity’, function(activity) {
-   activityName = activity.source.name;
+  activityName = activity.source.name;
 });
 window.addEventListener(‘click’,function() {
-	activity.postResult(selectedImage)
+  activity.postResult(selectedImage)
 });
 
 //call
-var activity = new MozActivity(‘pick’, ‘image/*’)
+var activity = new MozActivity(‘pick’, ‘image/*’);
 activity.onsuccess = function (e) { e.target.result }
 activity.onerror = function() {e}  { }
-						</pre></code>
-					</section>
-					<section>
-						<h1>System Messages</h1>
-						<code class="javascript" contenteditable="" ><pre>
-//manifest
-...
+          </code></pre>
+          </section>
+          <section>
+            <h1>System Messages</h1>
+            <pre><code class="javascript" contenteditable="" >
 "messages": [
-	{ "alarm": "/facebook/fb_sync.html" },
-	{ "notification": "/dialer/index.html#keyboard-view" },
-	{ "telephony-new-call": "/dialer/index.html#keyboard-view" },
-...
-
-//code
-...
+  { "alarm": "/facebook/fb_sync.html" },
+  { "notification": "/dialer/index.html#keyboard-view" },
+  { "telephony-new-call": "/dialer/index.html#keyboard-view" }
+]
+            </code></pre>
+            <pre><code class="javascript" contenteditable="" >
 navigator.mozSetMessageHandler('telephony-new-call', function newCall() {
-	openCallScreen();
+  openCallScreen();
 });
-...
-						</pre></code>
-					</section>
-					<section>
-						<h1>Building blocks</h1>
-						<a href="http://buildingfirefoxos.com/">buildingfirefoxos.com</a>
-					</section>
-					<section>
-						<h1>Seguridad</h1>
-						<ul>
-							<li>Las aplicaciones deben declarar que APIs privilegiadas van a utilizar</li>
-							<li>Varios niveles de confianza</li>
-							<ul>
-								<li>Certified applications: Son del sistema (core)</li>
-								<li>Trusted applications: Preinstaladas y certificadas (firmadas)</li>
-								<li>Webapps:</li>
-								<ul>
-									<li>Trusted package: Del market y firmadas</li>
-									<li>Untrusted hosted webapp: Página web HTML5</li>
-									<li>Search engine (ev.me): Webpage bookmarks</li>
-								</ul>
-							</ul>
-							<li>Same origin policy y Content Security Policy (CSP)</li>
-						</ul>
-					</section>
-				</section>
-				<section>
-					<h1>GRACIAS</h1>
-					<h2>¿Preguntas?</h2>
-				</section>
-			</div>
-		</div>
+            </code></pre>
+          </section>
+          <section>
+            <h1>Building blocks</h1>
+            <a href="http://buildingfirefoxos.com/">buildingfirefoxos.com</a>
+          </section>
+          <section>
+            <h1>Seguridad</h1>
+            <ul>
+              <li>Las aplicaciones deben declarar que APIs privilegiadas van a utilizar</li>
+              <li>Varios niveles de confianza</li>
+              <ul>
+                <li>Certified applications: Son del sistema (core)</li>
+                <li>Trusted applications: Preinstaladas y certificadas (firmadas)</li>
+                <li>Webapps:</li>
+                <ul>
+                 <li>Trusted package: Del market y firmadas</li>
+                 <li>Untrusted hosted webapp: Página web HTML5</li>
+                 <li>Search engine (ev.me): Webpage bookmarks</li>
+                </ul>
+              </ul>
+              <li>Same origin policy y Content Security Policy (CSP)</li>
+            </ul>
+          </section>
 
-		<script src="reveal.js/lib/js/head.min.js"></script>
-		<script src="reveal.js/js/reveal.min.js"></script>
-		<script>
+          <section>
+            <h1>MULTIPLATAFORM</h1>
+          </section>
+          <section>
+            <img src="res/multi.png" alt="">
+            <p>Firefox OS y Android</p>
+          </section>
+          <section>
+            <img src="res/multi2.png" alt="">
+            <p>Desktop too!</p>
+          </section>
+        </section>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        <section>
+          <section>
+            <h1>SDK</h1>
+          </section>
+          <section>
+            <img src="res/kidding.png" alt="">
+          </section>
+          <section>
+            <h3>¿lo tengo que repetir?</h3>
+          </section>
+           <section>
+            <h3>en serio… ¿qué he dicho antes?</h3>
+          </section>
+          <section>
+            <h1>THE WEB IS THE PLATFORM!!!</h1>
+          </section>
+          <section>
+            <h2>Firefox OS Simulator</h2>
+            <img src="res/firefoxos-simulator.png" alt="">
+          </section>
+          <section>
+            <h2>Firefox OS Emulator</h2>
+            <p>Basado en Qemu</p>
+          </section>
+          <section>
+            <h2>Firefox devtools</h2>
+            <img src="res/devtools.png" alt="">
+          </section>
+          <section>
+            <h2>Teléfonos</h2>
+            <img src="res/Geeksphone-Firefox-OS.jpeg" alt="">
+            <a href="http://geeksphone.com">http://geeksphone.com</a>
+          </section>
+        </section>
 
-				width: 960,
-				height: 700,
+        <section>
+          <section>
+            <h1>DEMO TIME!!!!1!!</h1>
+            <small>… sí, estamos tan seguros de que todo funciona que hacemos una demo ¡REAL!</small>
+          </section>
+        </section>
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+        <!-- Mozilla things -->
+        <section>
+          <section>
+            <h1>Mozilla</h1>
+          </section>
+          <section>
+            <h2>Non profit</h2>
+          </section>
+          <section>
+            <h2>Work for mankind</h2>
+          </section>
+          <section>
+            <h2>Openness</h2>
+          </section>
+          <section>
+            <h2>Innovation-driven</h2>
+          </section>
+          <section>
+            <h2>We do not have stakeholders…</h2>
+            <h2 class="fragment">… so we do not answer to nobody except you</h2>
+          </section>
+          <section>
+            <h2>Meritocracy</h2>
+          </section>
+          <section>
+            <h2>Community based</h2>
+          </section>
+        </section>
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-		</script>
+        <section>
+          <small>Remember………………</small>
+          <h1 class="fragment">THE WEB IS THE PLATFORM!!</h1>
+        </section>
 
-	</body>
+
+        <section>
+          <section>
+            <h1>GRACIAS!</h1>
+          </section>
+          <section>
+            <h2>FAQ</h2>
+            <ul>
+              <li>¿Vais a hacer un duelo de espadas con Chrome?</li>
+              <li>¿Puedo usar "código nativo" en Firefox OS?</li>
+              <li>¿Puedo portar mi aplicación de Android?</li>
+              <li>¿Por qué un sistema operativo MÁS?</li>
+              <li>¿Ubuntu touch? ¿Tizen? ¿Sailfish? ¿WebOS?</li>
+              <li>¿PhoneGap?</li>
+            </ul>
+            </section>
+          </section>
+
+
+      </div>
+    </div>
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.min.js"></script>
+<script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        width: 1024,
+        height: 768,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+       { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+       { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },//'
+       { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+       { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+       { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+       { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: '/socket.io/socket.io.js', async: true },
+        { src: 'plugin/notes-server/client.js', async: true }
+          ]
+        });
+</script>
+
+</body>
 </html>
