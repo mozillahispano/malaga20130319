@@ -1,6 +1,8 @@
-Presentación realizada en la Universidad Alfonso X el sabio
+Presentación realizada en la Universidad de Málaga
 
-1 de Marzo de 2013
+(forked from https://github.com/frsela/PresentacionFirefoxOS_UAX)
+
+19 de marzo de 2013. David Bengoa, Guillermo López
 
 ----
 
@@ -11,4 +13,4 @@ git submodule init
 git submodule update
 ```
 
-Para ver online: http://frsela.github.com/PresentacionFirefoxOS_UAX/
+Para ver online: http://mozillahispano.github.com/PresentacionFirefoxOS_Malaga/
