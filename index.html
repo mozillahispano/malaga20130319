@@ -35,14 +35,14 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>Firefox OS</h1>
+          <h1>Firefox OS - HTML5</h1>
           <p>La web es la plataforma</p>
           <p>
             <small>
               David Bengoa Rocandio<br />
               Mozilla Hispano<br />
               <a href="mailto:youwotma@mozilla-hispano.org">youwotma@mozilla-hispano.org</a>
-              <a href="https://twitter.com/youwotma">@youwotma</a>
+              <a href="https://twitter.com/youwotma">@DvdBng</a>
               <a href="https://github.com/youwotma">github.com/youwotma</a>
             </small>
             <small>
@@ -66,8 +66,281 @@
           <section>
             <h2>Presentación</h2>
             <img src="res/david.png">
-            <p>David Bengoa, @youwotma, youwotma@mozilla-hispano.org</p>
+            <p>David Bengoa, @DvdBng, youwotma@mozilla-hispano.org</p>
           </section>
+        </section>
+
+        <!-- Webapps -->
+        <section>
+          <section>
+            <h1>WebApps</h1>
+            <p>Con tecnologías web hacemos páginas web</p>
+            <p>Entonces, ¿a qué nos referimos?</p>
+            <p><br />Para hacer aplicaciones necesitamos:</p>
+            <ul>
+              <li>Capacidad de funcionamiento offline</li>
+              <li>Almacenamiento local</li>
+              <li>Conectividad</li>
+              <li>Acceso al sistema de ficheros</li>
+              <li>Multimedia</li>
+            </ul>
+            <p><br />¿Los estándares web lo soportan?</p>
+          </section>
+          <section>
+            <h2>HTML5 / CSS3 / JavaScript</h2>
+            <ul>
+              <li><a href="http://www.html5rocks.com/en/features/offline">
+                Capacidad de funcionamiento offline
+              </a>: application cache</li>
+              <li><a href="http://www.html5rocks.com/en/features/storage">
+                Almacenamiento local
+              </a>: localStorage, webSQL</li>
+              <li><a href="http://www.html5rocks.com/en/features/connectivity">
+                Conectividad
+              </a>: WebSockets, Server-Sent events</li>
+              <li><a href="http://www.html5rocks.com/en/features/file_access">
+                Acceso al sistema de ficheros
+              </a>: File API</li>
+              <li><a href="http://www.html5rocks.com/en/features/multimedia">
+                Multimedia
+              </a>: audio y video tags, 3D Canvas, animaciones CSS…</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Pero aún nos falta …</h1>
+            <ul>
+              <li>Control de energía</li>
+              <li>Vibrador</li>
+              <li>Envío de mensajes cortos</li>
+              <li>Telefonía</li>
+              <li>…</li>
+            </ul>
+            <p><br />No todo podemos implementarlo con la web, necesitamos acceder a recursos del sistema</p>
+          </section>
+        </section>
+
+        <!-- WebAPIs -->
+        <section>
+          <section>
+            <h1>WebAPIs</h1>
+            <img src="res/woody_html5.jpg" height="400px" />
+            <p>Necesitamos exponer funcionalidades nativas a la web</p>
+          </section>
+          <section>
+            <h1>WebTelephony</h1>
+            <p>Funciones de telefonía. Imprescindible para realizar y recibir llamadas</p>
+            <a href="http://sysapps.github.com/sysapps/proposals/Telephony/Telephony.html">http://sysapps.github.com/sysapps/proposals/Telephony/Telephony.html</a>
+            <pre>
+              <code class="javascript" contenteditable="" >
+var call = navigator.mozTelephony.dial('+34983367743'); // Inicia una llamada
+call.addEventListener('statechange', function(e) { // Recibe una llamada
+  if(e.target.state === 'alerting') { console.log('Llamando...'); }
+  if(e.target.state === 'connected') { console.log('Llamada contestada!'); }
+});
+            </code></pre>
+          </section>
+          <section>
+            <h1>WebSMS / MMS</h1>
+            <p>Funciones de mensajería</p>
+            <a href="http://sysapps.github.com/sysapps/proposals/Messaging/Messaging.html">http://sysapps.github.com/sysapps/proposals/Messaging/Messaging.html</a>
+            <pre>
+              <code class="javascript" contenteditable="" >
+var req = navigator.mozSms.send('+34638883076','OLA KE ASE');  // Envía un SMS
+req.onsuccess = function() { window.console.log('Mensaje enviado!!') };
+
+navigator.mozSms.addEventListener('received',receivedCB); // Escucha eventos SMS
+            </code></pre>
+          </section>
+          <section>
+            <h1>Contacts</h1>
+            <p>Gestión de la agenda de contactos (crear, leer, actualizar, borrar y buscar)</p>
+            <a href="http://sysapps.github.com/sysapps/proposals/Contacts/Contacts.html">http://sysapps.github.com/sysapps/proposals/Contacts/Contacts.html</a>
+            <pre><code class="javascript" contenteditable="" >
+var options = {
+  filterBy: ['tel'],
+  filterOp: 'contains',
+  filterValue: '983367743'
+};
+var request = navigator.mozContacts.find(options);
+request.onsuccess = function (e) {
+  if (e.target.result.length == 0)
+  else { contactName = e.target.result[0].name }
+}
+          </code></pre>
+          </section>
+          <section>
+            <h1>Settings</h1>
+            <p>Leer y modificar propiedades del sistema</p>
+            <a href="https://wiki.mozilla.org/WebAPI/SettingsAPI#Proposed_API">https://wiki.mozilla.org/WebAPI/SettingsAPI#Proposed_API</a>
+            <pre><code class="javascript" contenteditable="" >
+var request = navigator.mozSettings.getLock().get('language.current');
+request.onsuccess = function(e) {
+  selectedLocale = e.target.result['language.current'];
+}
+            </code></pre>
+          </section>
+          <section>
+            <h1>Mobile Network Connection</h1>
+            <p>Interfaz con la RIL</p>
+            <a href="https://wiki.mozilla.org/WebAPI/WebMobileConnection">https://wiki.mozilla.org/WebAPI/WebMobileConnection</a>
+            <pre><code class="javascript" contenteditable="" >
+    navigator.mozMobileConnection.cardState; // Estado tarjeta SIM
+    navigator.mozMobileConnection.voice;     // Estado conexión de voz
+    navigator.mozMobileConnection.data;      // Estado conexión de datos
+            </code></pre>
+          </section>
+          <section>
+            <h1>Device Media Storage</h1>
+            <p>Recuperar y almacenar contenido multimedia</p>
+            <a href="https://wiki.mozilla.org/WebAPI/DeviceStorageAPI">https://wiki.mozilla.org/WebAPI/DeviceStorageAPI</a>
+            <pre><code class="javascript" contenteditable="" >
+var store = navigator.getDeviceStorage('pictures');  // Almacenamiento de imágenes
+store.addNamed(blob,'myPicture');   // Añadir una imagen
+store.enumerate();  // Iterar sobre las imágenes
+            </code></pre>
+          </section>
+          <section>
+            <h1>Battery Status</h1>
+            <p>Monitorizar batería</p>
+            <a href="http://www.w3.org/TR/battery-status/">http://www.w3.org/TR/battery-status/</a>
+            <pre><code class="javascript" contenteditable="" >
+navigator.battery.onlevelchange = function () {
+  console.log('Nivel de la batería: ' + navigator.battery.level);
+};
+            </code></pre>
+          </section>
+          <section>
+            <h1>Vibration</h1>
+            <p>Actuar sobre el vibrador del terminal</p>
+            <a href="http://www.w3.org/TR/vibration/">http://www.w3.org/TR/vibration/</a>
+            <pre><code class="javascript" contenteditable="" >
+navigator.mozVibrate(1000); // Vibrar un segundo
+navigator.mozVibrate(); // Cancelar la vibración actual
+            </code></pre>
+          </section>
+          <section>
+            <h1>Screen Lock</h1>
+            <p>Detectar giros del terminal y bloquear orientación</p>
+            <a href="http://www.w3.org/TR/screen-orientation/">http://www.w3.org/TR/screen-orientation/</a>
+            <pre><code class="javascript" contenteditable="" >
+screen.addEventListener('orientationchange',function() {
+  window.console.log('Nueva orientación: ',screen.orientation);
+});
+screen.lock('landscape');  // Fijar la pantalla a una orientación
+            </code></pre>
+          </section>
+          <section>
+            <h1>Power Management</h1>
+            <p>Gestión de energía</p>
+            <a href="https://wiki.mozilla.org/WebAPI/PowerManagementAPI">https://wiki.mozilla.org/WebAPI/PowerManagementAPI</a>
+            <pre><code class="javascript" contenteditable="" >
+navigator.mozPower.reboot();
+navigator.mozPower.powerOff();
+navigator.mozPower.screenBrightness = 0.5;
+navigator.mozPower.screenEnabled = false;
+            </code></pre>
+          </section>
+          <section>
+            <h1>Resource Lock</h1>
+            <p>Bloquear recursos, por ejemplo que se apague la pantalla si estamos reproduciendo un video</p>
+            <a href="http://www.w3.org/TR/PowerManagementAPI/">http://www.w3.org/TR/PowerManagementAPI/</a>
+            <pre><code class="javascript" contenteditable="" >
+var lock = navigator.requestWakeLock('screen');
+lock.unlock();
+            </code></pre>
+          </section>
+          <section>
+            <h1>Notifications</h1>
+            <p>Publicación de notificaciones (barra superior)</p>
+            <a href="http://www.w3.org/TR/notifications/">http://www.w3.org/TR/notifications/</a>
+            <pre><code class="javascript" contenteditable="" >
+      var notif = navigator.mozNotification.createNotification (
+      "Reunión a punto de empezar", "Sala 101”, 'icon.png' );
+      notif.onclick = function(){ /* Hacer algo */ };
+      notif.show();
+            </code></pre>
+          </section>
+          <section>
+            <h1>Keyboard IME</h1>
+            <p>Teclado virtual</p>
+            <a href="https://wiki.mozilla.org/WebAPI/KeboardIME">https://wiki.mozilla.org/WebAPI/KeboardIME</a>
+            <pre><code class="javascript" contenteditable="" >
+navigator.mozKeyboard.sendKey(keyCode, charCode); // Send key to UI comp.
+navigator.mozKeyboard.onfocuschange
+            </code></pre>
+          </section>
+          <section>
+            <h1>Push Notifications</h1>
+            <p>Notificaciones asíncronas. Varias propuestas:</p>
+            <a href="https://wiki.mozilla.org/WebAPI/SimplePush">https://wiki.mozilla.org/WebAPI/SimplePush</a>
+            <a href="http://www.w3.org/TR/push-api/">http://www.w3.org/TR/push-api/</a>
+            <a href="http://frsela.github.com/notification_server_doc/">http://frsela.github.com/notification_server_doc/</a>
+            <pre><code class="javascript" contenteditable="" >
+// Manifest
+{"messages": [
+  {"push": "/view_to_launch.html"}
+]}
+            </code></pre>
+            <pre><code class="javascript" contenteditable="" >
+var req = navigator.pushNotification.register(), endpoint;
+req.onsuccess = function(e) {
+  endpoint = e.target.result.pushEndpoint;
+  // Enviar el endpoint al servidor
+  // ...
+}
+navigator.mozSetMessageHandler('push', {
+  handleMessage: function(e) {
+    if (e.target.pushEndpoint == endpoint){
+      // Notificación push recibida!
+      // Actualiza la información de el servidor de la aplicación
+    }
+  }
+});
+            </code></pre>
+          </section>
+          <section>
+            <h1>WebRTC</h1>
+            <a href="http://www.webrtc.org/">webrtc.org</a>
+            <ul>
+                <li>Comunicación P2P</li>
+                <li>Acceso a la cámara y al micrófono</li>
+            </ul>
+          </section>
+          <section>
+              <h1>¡Y aun hay mas!</h1>
+              <ul>
+                  <li>WebNFC</li>
+                  <li>WebUSB</li>
+                  <li>WebBluetooth</li>
+                  <li>WebFM</li>
+                  <li>TCP Socket API</li>
+                  <li>UDP Socket API</li>
+
+                  <li>Luz Ambiental</li>
+                  <li>Sensor de proximidad</li>
+                  <li>Información redes Wifi</li>
+              </ul>
+          </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>El lenguaje del futuro</h2>
+            </section>
+            <section>
+                <h1>JavaScript</h1>
+                <img src="res/betjs.png" alt="Allways bet on javascript"/>
+            </section>
+            <section>
+                <h3>ASM.js, (casi) tan rápido como el código nativo</h3>
+                <img src="res/asmjs.jpg" alt="ASM.js" /><br/>
+                <a href="http://asmjs.org/">asmjs.org</a>
+            </section>
+            <section>
+                <h1>DEMO</h1>
+                <a href="http://127.0.0.1/dev/BananaBread/cube2">BananaBread</a>
+                <a href="https://developer.mozilla.org/en/demos/detail/bananabread">(Online)</a>
+            </section>
         </section>
 
         <section>
@@ -245,245 +518,6 @@
           </section>
         </section>
 
-        <!-- Webapps -->
-        <section>
-          <section>
-            <h1>WebApps</h1>
-            <p>Con tecnologías web hacemos páginas web</p>
-            <p>Entonces, ¿a qué nos referimos?</p>
-            <p><br />Para hacer aplicaciones necesitamos:</p>
-            <ul>
-              <li>Capacidad de funcionamiento offline</li>
-              <li>Almacenamiento local</li>
-              <li>Conectividad</li>
-              <li>Acceso al sistema de ficheros</li>
-              <li>Multimedia</li>
-            </ul>
-            <p><br />¿Los estándares web lo soportan?</p>
-          </section>
-          <section>
-            <h2>HTML5 / CSS3 / JavaScript</h2>
-            <ul>
-              <li><a href="http://www.html5rocks.com/en/features/offline">
-                Capacidad de funcionamiento offline
-              </a>: application cache, localStorage, webSQL…</li>
-              <li><a href="http://www.html5rocks.com/en/features/storage">
-                Almacenamiento local
-              </a>: indexedDB, Web Storage…</li>
-              <li><a href="http://www.html5rocks.com/en/features/connectivity">
-                Conectividad
-              </a>: WebSockets, Server-Sent events</li>
-              <li><a href="http://www.html5rocks.com/en/features/file_access">
-                Acceso al sistema de ficheros
-              </a>: XMLHttpRequest2</li>
-              <li><a href="http://www.html5rocks.com/en/features/multimedia">
-                Multimedia
-              </a>: audio y video tags, 3D Canvas, animaciones CSS…</li>
-            </ul>
-          </section>
-          <section>
-            <h1>Pero aún nos falta …</h1>
-            <ul>
-              <li>Control de energía</li>
-              <li>Vibrador</li>
-              <li>Envío de mensajes cortos</li>
-              <li>Telefonía</li>
-              <li>…</li>
-            </ul>
-            <p><br />No todo podemos implementarlo con la web, necesitamos acceder a recursos del sistema</p>
-          </section>
-        </section>
-
-        <!-- WebAPIs -->
-        <section>
-          <section>
-            <h1>WebAPIs</h1>
-            <img src="res/woody_html5.jpg" height="400px" />
-            <p>Necesitamos exponer funcionalidades nativas a la web</p>
-          </section>
-          <section>
-            <h1>WebTelephony</h1>
-            <p>Funciones de telefonía. Imprescindible para realizar y recibir llamadas</p>
-            <a href="http://sysapps.github.com/sysapps/proposals/Telephony/Telephony.html">http://sysapps.github.com/sysapps/proposals/Telephony/Telephony.html</a>
-            <pre>
-              <code class="javascript" contenteditable="" >
-var call = navigator.mozTelephony.dial(‘+34983367743’); // Launch a call
-call.addEventListener('statechange', function(e) { // Listening
-  if(e.target.state === ‘alerting’) window.console.log(‘Ringing the other party!’);
-  if(e.target.state === ‘connected’) { // Do something. The other party answered }
-});
-            </code></pre>
-          </section>
-          <section>
-            <h1>WebSMS / MMS</h1>
-            <p>Funciones de mensajería</p>
-            <a href="http://sysapps.github.com/sysapps/proposals/Messaging/Messaging.html">http://sysapps.github.com/sysapps/proposals/Messaging/Messaging.html</a>
-            <pre>
-              <code class="javascript" contenteditable="" >
-var req = navigator.mozSms.send(‘+34638883076’,’Hi, coffee?’);  // Send
-req.onsuccess = function() { window.console.log(‘Sent!!’) };
-
-navigator.mozSms.addEventListener(‘received’,receivedCB); // Listen to new
-            </code></pre>
-          </section>
-          <section>
-            <h1>Contacts</h1>
-            <p>Gestión de la agenda de contactos (crear, leer, actualizar, borrar y buscar)</p>
-            <a href="http://sysapps.github.com/sysapps/proposals/Contacts/Contacts.html">http://sysapps.github.com/sysapps/proposals/Contacts/Contacts.html</a>
-            <pre><code class="javascript" contenteditable="" >
-var options = {
-  filterBy: ['tel'],
-  filterOp: 'contains',
-  filterValue: ‘983367743’
-};
-var request = navigator.mozContacts.find(options);
-request.onsuccess = function (e) {
-  if (e.target.result.length == 0)
-  else { contactName = e.target.result[0].name }
-}
-          </code></pre>
-          </section>
-          <section>
-            <h1>Settings</h1>
-            <p>Leer y modificar propiedades del sistema</p>
-            <a href="https://wiki.mozilla.org/WebAPI/SettingsAPI#Proposed_API">https://wiki.mozilla.org/WebAPI/SettingsAPI#Proposed_API</a>
-            <pre><code class="javascript" contenteditable="" >
-var request = navigator.mozSettings.getLock().get('language.current');
-request.onsuccess = function(e) {
-  selectedLocale = e.target.result['language.current’];
-}
-            </code></pre>
-          </section>
-          <section>
-            <h1>Mobile Network Connection</h1>
-            <p>Interfaz con la RIL</p>
-            <a href="https://wiki.mozilla.org/WebAPI/WebMobileConnection">https://wiki.mozilla.org/WebAPI/WebMobileConnection</a>
-            <pre><code class="javascript" contenteditable="" >
-    navigator.mozMobileConnection.cardState; // SIM card state
-    navigator.mozMobileConnection.voice;     // Voice connection state
-    navigator.mozMobileConnection.data;      // Data Connection state
-            </code></pre>
-          </section>
-          <section>
-            <h1>Device Media Storage</h1>
-            <p>Recuperar y almacenar contenido multimedia</p>
-            <a href="https://wiki.mozilla.org/WebAPI/DeviceStorageAPI">https://wiki.mozilla.org/WebAPI/DeviceStorageAPI</a>
-            <pre><code class="javascript" contenteditable="" >
-var store = navigator.getDeviceStorage(‘pictures’);  // Picture store
-store.addNamed(blob,’myPicture’);                    // Add a new element
-store.enumerate();                                   // Iterate over the store (cursor)
-            </code></pre>
-          </section>
-          <section>
-            <h1>Camera</h1>
-            <p>Operaciones para trabajar con la cámara de fotos</p>
-            <p>Sin spec. En futuro: Alinear con WebRTC</p>
-            <pre><code class="javascript" contenteditable="" >
-navigator.mozCameras.getCamera(options, function gotCamera());
-camera.getPreviewStream(function gotPreview(stream) {
-  preview.mozSrcObject = stream
-});
-camera.getPreviewStreamVideoMode; // For video
-camera.capabilities;              // Hardware capabilities
-            </code></pre>
-          </section>
-          <section>
-            <h1>Battery Status</h1>
-            <p>Monitorizar batería</p>
-            <a href="http://www.w3.org/TR/battery-status/">http://www.w3.org/TR/battery-status/</a>
-            <pre><code class="javascript" contenteditable="" >
-navigator.battery.onlevelchange = function () {
-  console.log(‘New battery level: ‘ + navigator.battery.level);
-};
-            </code></pre>
-          </section>
-          <section>
-            <h1>Vibration</h1>
-            <p>Actuar sobre el vibrador del terminal</p>
-            <a href="http://www.w3.org/TR/vibration/">http://www.w3.org/TR/vibration/</a>
-            <pre><code class="javascript" contenteditable="" >
-navigator.mozVibrate(1000); // Vibrate a second
-navigator.mozVibrate(); // cancel the current vibration
-            </code></pre>
-          </section>
-          <section>
-            <h1>Screen Lock</h1>
-            <p>Detectar giros del terminal y bloquear orientación</p>
-            <a href="http://www.w3.org/TR/screen-orientation/">http://www.w3.org/TR/screen-orientation/</a>
-            <pre><code class="javascript" contenteditable="" >
-screen.addEventListener(‘orientationchange’,function() {
-  window.console.log(‘New Orientation: ‘,screen.orientation);
-});
-screen.lock(‘landscape’);
-            </code></pre>
-          </section>
-          <section>
-            <h1>Power Management</h1>
-            <p>Gestión de energía</p>
-            <a href="https://wiki.mozilla.org/WebAPI/PowerManagementAPI">https://wiki.mozilla.org/WebAPI/PowerManagementAPI</a>
-            <pre><code class="javascript" contenteditable="" >
-navigator.mozPower.reboot();
-navigator.mozPower.powerOff();
-navigator.mozPower.screenBrightness = 0.5;
-navigator.mozPower.screenEnabled = false;
-            </code></pre>
-          </section>
-          <section>
-            <h1>Resource Lock</h1>
-            <p>Bloquear recursos, por ejemplo que se apague la pantalla si estamos reproduciendo un video</p>
-            <a href="http://www.w3.org/TR/PowerManagementAPI/">http://www.w3.org/TR/PowerManagementAPI/</a>
-            <pre><code class="javascript" contenteditable="" >
-var lock = navigator.requestWakeLock(‘screen’);
-lock.unlock();
-            </code></pre>
-          </section>
-          <section>
-            <h1>Notifications</h1>
-            <p>Publicación de notificaciones (barra superior)</p>
-            <a href="http://www.w3.org/TR/notifications/">http://www.w3.org/TR/notifications/</a>
-            <pre><code class="javascript" contenteditable="" >
-      var notif = navigator.mozNotification.createNotification (
-      "Meeting about to begin", "Room 101”, ‘icon.png’ );
-      notif.onclick = function() { // Do something };
-      notif.show();
-            </code></pre>
-          </section>
-          <section>
-            <h1>Keyboard IME</h1>
-            <p>Teclado virtual</p>
-            <a href="https://wiki.mozilla.org/WebAPI/KeboardIME">https://wiki.mozilla.org/WebAPI/KeboardIME</a>
-            <pre><code class="javascript" contenteditable="" >
-navigator.mozKeyboard.sendKey(keyCode, charCode); // Send key to UI comp.
-navigator.mozKeyboard.onfocuschange
-            </code></pre>
-          </section>
-          <section>
-            <h1>Push Notifications</h1>
-            <p>Notificaciones asíncronas. Varias propuestas:</p>
-            <a href="https://wiki.mozilla.org/WebAPI/SimplePush">https://wiki.mozilla.org/WebAPI/SimplePush</a>
-            <a href="http://www.w3.org/TR/push-api/">http://www.w3.org/TR/push-api/</a>
-            <a href="http://frsela.github.com/notification_server_doc/">http://frsela.github.com/notification_server_doc/</a>
-            <pre><code class="javascript" contenteditable="" >
-// Manifest
-{"messages": [
-  {"push": "/view_to_launch.html"}
-]}
-            </code></pre>
-            <pre><code class="javascript" contenteditable="" >
-var req = navigator.pushNotification.register();
-req.onsuccess = function(e) {
-  endpoint = e.target.result.pushEndpoint;  // sends the to the server
-}
-navigator.mozSetMessageHandler('push', {
-  handleMessage: function(e) {
-    if (e.target.pushEndpoint == endpoint)
-      getNewMessagesFromAppServer(e.target.version);
-  }
-});
-            </code></pre>
-          </section>
-        </section>
-
         <!-- Marketplace -->
         <section>
           <section>
@@ -577,15 +611,15 @@ navigator.mozSetMessageHandler('push', {
           </code></pre>
           <pre><code class="javascript" contenteditable="" >
 //code
-navigator.mozSetMessageHandler(‘activity’, function(activity) {
+navigator.mozSetMessageHandler('activity', function(activity) {
   activityName = activity.source.name;
 });
-window.addEventListener(‘click’,function() {
+window.addEventListener('click',function() {
   activity.postResult(selectedImage)
 });
 
 //call
-var activity = new MozActivity(‘pick’, ‘image/*’);
+var activity = new MozActivity('pick', 'image/*');
 activity.onsuccess = function (e) { e.target.result }
 activity.onerror = function() {e}  { }
           </code></pre>
